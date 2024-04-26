@@ -4,7 +4,140 @@ import "@/styles/globals.css";
 ---
 
 <Layout title="Frontend Mentor | Project tracking intro component">
-  <main></main>
+  <header
+    class="headerWrapper flex items-center justify-between px-8 pt-[2.37rem] xl:px-[10.31rem] xl:pt-16"
+  >
+    <div class="relative flex items-center justify-between gap-[16.44rem]">
+      <img src="/images/logo.svg" alt="logo" class="" />
+      <img
+        src="/images/icon-hamburger.svg"
+        alt=""
+        class="xl:hidden"
+        id="menuBtn"
+      />
+      <img
+        src="/public/images/icon-close.svg"
+        alt=""
+        class="hidden"
+        id="closeBtn"
+      />
+    </div>
+    <nav
+      class="hidden gap-[2.94rem] xl:flex xl:items-center xl:justify-between"
+    >
+      <ul class="flex items-center justify-between gap-10">
+        <li>
+          <a
+            href="/"
+            class="font-BarlowCondensed text-[0.9375rem] font-bold uppercase leading-normal tracking-[0.0625rem] text-[#242942] transition-all duration-500 ease-linear hover:underline"
+          >
+            Product
+          </a>
+        </li>
+        <li>
+          <a
+            href="/"
+            class="font-BarlowCondensed text-[0.9375rem] font-bold uppercase leading-normal tracking-[0.0625rem] text-[#242942] transition-all duration-500 ease-linear hover:underline"
+          >
+            Features
+          </a>
+        </li>
+        <li>
+          <a
+            href="/"
+            class="font-BarlowCondensed text-[0.9375rem] font-bold uppercase leading-normal tracking-[0.0625rem] text-[#242942] transition-all duration-500 ease-linear hover:underline"
+          >
+            Pricing
+          </a>
+        </li>
+        <li>
+          <a
+            href="/"
+            class="font-BarlowCondensed text-[0.9375rem] font-bold uppercase leading-normal tracking-[0.0625rem] text-[#242942] transition-all duration-500 ease-linear hover:underline"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="6"
+              height="7"
+              viewBox="0 0 6 7"
+              fill="none"
+            >
+              <circle opacity="0.15" cx="3" cy="3.57086" r="3" fill="#242942"
+              ></circle>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <button
+        type="button"
+        class="font-BarlowCondensed text-[0.9375rem] font-bold uppercase leading-normal tracking-[0.0625rem] text-[#242942] opacity-50 transition-all duration-500 ease-linear hover:underline"
+      >
+        Login</button
+      >
+    </nav>
+    <nav
+      class="absolute top-[7.55rem] flex h-[14.5625rem] w-[19.4375rem] flex-col items-center justify-center gap-[3.06rem] rounded-[0.1875rem] bg-[#fff] xl:hidden"
+      id="mobileMenu"
+    >
+      <ul
+        class="center relative flex flex-col items-center justify-center gap-6 after:absolute after:-bottom-6 after:h-[0.0625rem] after:w-[16.4375rem] after:bg-[#242942] after:opacity-[0.15]"
+      >
+        <li>
+          <a
+            href="/"
+            class="font-BarlowCondensed text-lg font-bold uppercase leading-normal tracking-[0.075rem] text-[#242942] transition-all duration-500 ease-linear hover:underline"
+          >
+            Product
+          </a>
+        </li>
+        <li>
+          <a
+            href="/"
+            class="font-BarlowCondensed text-lg font-bold uppercase leading-normal tracking-[0.075rem] text-[#242942] transition-all duration-500 ease-linear hover:underline"
+          >
+            Features
+          </a>
+        </li>
+        <li>
+          <a
+            href="/"
+            class="font-BarlowCondensed text-lg font-bold uppercase leading-normal tracking-[0.075rem] text-[#242942] transition-all duration-500 ease-linear hover:underline"
+          >
+            Pricing
+          </a>
+        </li>
+      </ul>
+      <button
+        type="button"
+        class="font-BarlowCondensed text-lg font-bold uppercase leading-normal tracking-[0.075rem] text-[#242942] opacity-50 transition-all duration-500 ease-linear hover:underline"
+      >
+        Login</button
+      >
+    </nav>
+  </header>
+  <main>
+    <section class=""></section>
+  </main>
 </Layout>
 
-<style></style>
+<style>
+  #mobileMenu {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
+<script is:inline>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const closeBtn = document.getElementById("closeBtn");
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    menuBtn.classList.add("hidden");
+    closeBtn.classList.remove("hidden");
+  });
+  closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+    menuBtn.classList.remove("hidden");
+    closeBtn.classList.add("hidden");
+  });
+</script>
