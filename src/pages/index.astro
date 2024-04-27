@@ -5,9 +5,9 @@ import "@/styles/globals.css";
 
 <Layout title="Frontend Mentor | Project tracking intro component">
   <header
-    class="headerWrapper flex items-center justify-between px-8 pt-[2.37rem] xl:px-[10.31rem] xl:pt-16"
+    class="headerWrapper relative z-50 flex items-center justify-between px-8 pt-[2.37rem] xl:px-[10.31rem] xl:pt-16"
   >
-    <div class="relative flex items-center justify-between gap-[16.44rem]">
+    <div class="flex items-center justify-between gap-[16.44rem]">
       <img src="/images/logo.svg" alt="logo" class="" />
       <img
         src="/images/icon-hamburger.svg"
@@ -76,7 +76,7 @@ import "@/styles/globals.css";
       >
     </nav>
     <nav
-      class="absolute top-[7.55rem] flex h-[14.5625rem] w-[19.4375rem] flex-col items-center justify-center gap-[3.06rem] rounded-[0.1875rem] bg-[#fff] xl:hidden"
+      class="absolute top-[7.55rem] z-50 flex h-[14.5625rem] w-[19.4375rem] flex-col items-center justify-center gap-[3.06rem] rounded-[0.1875rem] bg-[#fff] xl:hidden"
       id="mobileMenu"
     >
       <ul
@@ -115,14 +115,70 @@ import "@/styles/globals.css";
       >
     </nav>
   </header>
-  <main>
-    <section class=""></section>
+  <main class="relative flex flex-col-reverse xl:flex-row xl:pt-[8.33rem]">
+    <!-- Text -->
+    <section class="mx-8 xl:ml-[10.31rem] xl:w-[29.375rem]">
+      <div class="mb-5 flex items-center gap-4 xl:gap-[0.94rem]">
+        <h1
+          class="h-[1.5625rem] w-12 rounded-[0.78125rem] bg-[#242942] text-center font-BarlowCondensed font-bold uppercase tracking-[0.0625rem] text-[#fff]"
+        >
+          New
+        </h1>
+        <h2
+          class="font-BarlowCondensed text-[0.9375rem] font-normal uppercase leading-normal tracking-[0.3125rem] text-[#242942] opacity-50"
+        >
+          MONOGRAPH DASHBOARD
+        </h2>
+      </div>
+      <div class="mb-[1.69rem] flex flex-col gap-4 xl:mb-16 xl:gap-8">
+        <h2
+          class="font-BarlowCondensed text-[2.5rem] font-bold leading-10 text-[#242942] xl:text-[4rem] xl:leading-[4rem]"
+        >
+          POWERFUL INSIGHTS INTO YOUR TEAM
+        </h2>
+        <p
+          class="font-Barlow text-lg font-normal leading-relaxed text-[#242942] opacity-75 xl:w-[17.625rem]"
+        >
+          Project planning and time tracking for agile teams
+        </p>
+      </div>
+      <div class="flex items-center gap-5">
+        <button
+          type="button"
+          class="h-10 w-[9.5625rem] rounded-[0.3125rem] bg-[#FF5E5E] font-BarlowCondensed text-sm font-bold uppercase leading-normal tracking-[0.05831rem] text-[#fff] xl:h-12 xl:w-[11.5rem] xl:text-base xl:tracking-[0.06669rem]"
+          >SCHEDULE A DEMO</button
+        >
+        <a
+          href="/"
+          class="w-[11rem] font-BarlowCondensed font-normal leading-normal tracking-[0.15625rem] text-[#242942] opacity-50"
+          >TO SEE A PREVIEW</a
+        >
+      </div>
+    </section>
+    <!-- Image -->
+    <section class="">
+      <div
+        class="backPattern absolute right-0 top-[-5.813rem] -z-50 h-[26.5625rem] w-[12rem] bg-[#EDF2F6] xl:h-[26.6875rem] xl:w-[44.0625rem]"
+      >
+      </div>
+      <div class="">
+        <img
+          src="/public/images/illustration-devices.svg"
+          alt=""
+          class="relative right-[-6rem] top-16 z-50 xl:absolute xl:-right-[16.5rem] xl:top-[5.375rem]"
+        />
+      </div>
+    </section>
   </main>
 </Layout>
 
 <style>
   #mobileMenu {
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .backPattern {
+    border-radius: 0rem 0rem 0rem 3.75rem;
   }
 </style>
 
@@ -131,7 +187,7 @@ import "@/styles/globals.css";
   const mobileMenu = document.getElementById("mobileMenu");
   const closeBtn = document.getElementById("closeBtn");
   menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.remove("hidden");
     menuBtn.classList.add("hidden");
     closeBtn.classList.remove("hidden");
   });
